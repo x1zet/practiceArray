@@ -173,5 +173,143 @@ public class Number5 {
 //        } else{
 //            System.out.println("Не хватит");
 //        }
+
+        // Известны оценки ученика по 10 предметам.
+        // Определить минимальную и максимальную оценку.
+        // Оценки хранятся в десятичном формате (3.5 - 4.8 и тд)
+
+//        double[] score = new double[10];
+//
+//        score[0] = 3.6;
+//        score[1] = 4.6;
+//        score[2] = 5;
+//        score[3] = 2.45;
+//        score[4] = 3.3;
+//        score[5] = 3;
+//        score[6] = 4;
+//        score[7] = 4.5;
+//        score[8] = 4.3;
+//        score[9] = 3.9;
+//
+//        double minScore = score[0];
+//        double maxScore = score[0];
+//
+//        for (int i = 1; i < score.length; i++) {
+//            if (maxScore < score[i]){
+//                maxScore = score[i];
+//            }
+//        }
+//
+//        for (int i = 1; i < score.length; i++) {
+//            if (minScore > score[i]){
+//                minScore = score[i];
+//            }
+//        }
+//
+//        System.out.println("Максимальная оценка: " + maxScore);
+//        System.out.println("Минимальная оценка: " + minScore);
+
+        //Дан массив целых чисел.
+        //Выяснить верно ли, что сумма элементов массива есть нечетное число
+
+//        int[] numbers = {1,2,3,4,5,6,7,8,9};
+//
+//        int summNumbers = 0;
+//
+//        for (int i = 0; i < numbers.length; i++) {
+//            summNumbers += numbers[i];
+//        }
+//
+//        if (summNumbers % 2 != 0){
+//            System.out.println("Сумма чисел массива нечетное: " + summNumbers);
+//        } else {
+//            System.out.println("Сумма чисел массива четное: " + summNumbers);
+//        }
+
+        // Заполнить массив, состоящий из 30 элементов случайными числами в пределах от 1 до 9.
+
+//        double[] numbers = new double[30];
+//
+//        for (int i = 0; i < numbers.length; i++) {
+//            numbers[i] = new Random().nextDouble(10);
+//        }
+//
+//        System.out.println(Arrays.toString(numbers));
+
+        // В ведомости указана зарплата, выплаченная каждому из сотрудников фирмы за месяц.
+        // Определить общую сумму выплаченных по ведомости денег.
+        // Определить максимальную и минимальную зарплату в фирме. Известно, что в фирме работает 30 человек.
+
+//        int[] salary = new int[30];
+//
+//        int totalSalary = 0;
+//
+//
+//
+//        for (int i = 0; i < salary.length; i++) {
+//            salary[i] = new Random().nextInt(30000) + 60000;
+//        }
+//
+//        int minSalary = salary[0];
+//        int maxSalary = salary[0];
+//
+//        for (int i : salary) {
+//            totalSalary += i;
+//        }
+//
+//        for (int i = 1 ; i < salary.length; i++) {
+//            if (maxSalary < salary[i]){
+//                maxSalary = salary[i];
+//            }
+//        }
+//
+//        for (int i = 0; i < salary.length; i++) {
+//            if (minSalary > salary[i]){
+//                minSalary = salary[i];
+//            }
+//        }
+//
+//        System.out.println("Общая сумма: " + totalSalary);
+//        System.out.println("Максимальная зп: " + maxSalary);
+//        System.out.println("Минимальная зп: " +  minSalary);
+
+
+        // В массиве хранятся сведения об оценках 25 учеников по Информатике.
+        // Определить количество неуспевающих учеников, троечников, ударников и отличников.
+        // А также выяснить каких учеников больше.
+
+        int[] grades = new int[25];
+
+        for (int i = 0; i < grades.length; i++) {
+            grades[i] = new Random().nextInt(4) + 2;
+        }
+
+        int failing = 0;   // Количество неуспевающих (оценка < 3)
+        int threes = 0;    // Количество троечников (оценка == 3)
+        int fours = 0;     // Количество ударников (оценка == 4)
+        int excellent = 0;
+
+        for (int grade : grades) {
+            if (grade < 3) {
+                failing++;  // Неуспевающий ученик
+            } else if (grade == 3) {
+                threes++;   // Троечник
+            } else if (grade == 4) {
+                fours++;    // Ударник
+            } else if (grade == 5) {
+                excellent++; // Отличник
+            }
+        }
+        System.out.println("Оценки учеников: ");
+        for (int grade : grades) {
+            System.out.print(grade + " ");
+        }
+        System.out.println("\n");
+
+        System.out.println("Неуспевающие: " + failing);
+        System.out.println("Троечники: " + threes);
+        System.out.println("Ударники: " + fours);
+        System.out.println("Отличники: " + excellent);
+
     }
 }
